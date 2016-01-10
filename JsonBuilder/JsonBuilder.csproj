@@ -37,7 +37,7 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IJSonData.cs" />
+    <Compile Include="IJsonData.cs" />
     <Compile Include="JsonBuilder.cs" />
     <Compile Include="JsonCollection.cs" />
     <Compile Include="JsonObject.cs" />

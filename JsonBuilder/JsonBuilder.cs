@@ -59,7 +59,7 @@ namespace JSonBuilder
 
             foreach (var value in values)
             {
-                if (value is IJSonData)
+                if (value is IJsonData)
                 {
                     var wrapedData = value.ToString();
                     stringBuilder.AppendLine(wrapedData + ", ");

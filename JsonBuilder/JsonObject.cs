@@ -4,15 +4,15 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class JsonObject: IJSonData
+    public class JsonObject: IJsonData
     {
-        private readonly List<IJSonData> values = new List<IJSonData>();
+        private readonly List<IJsonData> values = new List<IJsonData>();
         public JsonObject(string elementName)
         {
             this.Name = elementName;
         }
 
-        public IEnumerable<IJSonData> Values => this.values;
+        public IEnumerable<IJsonData> Values => this.values;
 
         public string Name { get; set; }
 

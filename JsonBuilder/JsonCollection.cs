@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.Text;
 
-    public class JsonCollection : IJSonData
+    public class JsonCollection : IJsonData
     {
         public string Name { get; }
 
