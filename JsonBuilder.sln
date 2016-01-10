@@ -7,11 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonBuilder", "JsonBuilder\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonBuilder.Specs", "JsonBuilder.Specs\JsonBuilder.Specs.csproj", "{F8259608-FF12-4CA5-97A0-61AD783C277B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0C0C25A5-5FF3-43B3-9197-86BE0FD6F415}"
-	ProjectSection(SolutionItems) = preProject
-		nuget.config = nuget.config
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
