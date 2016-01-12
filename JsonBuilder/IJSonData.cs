@@ -1,6 +1,6 @@
 namespace JSonBuilder
 {
-    public interface IJsonData
+    public interface IJSonData
     {
         string ToJson();
     }

@@ -1,6 +1,6 @@
 namespace JSonBuilder
 {
-    public class JsonValue : IJsonData
+    public class JsonValue : IJSonData
     {
         public object Value { get; private set; }
 

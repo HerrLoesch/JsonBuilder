@@ -2,8 +2,6 @@ namespace JSonBuilder.Specs
 {
     using DynamicSpecs.NUnit;
 
-    using JSonBuilder;
-
     using Newtonsoft.Json.Linq;
 
     using NUnit.Framework;

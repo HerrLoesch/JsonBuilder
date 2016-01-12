@@ -4,15 +4,29 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class JsonObject: IJsonData
+    public class JsonObject: IJSonData
     {
-        private readonly List<IJsonData> values = new List<IJsonData>();
+        private readonly List<IJSonData> values = new List<IJSonData>();
+
         public JsonObject(string elementName)
         {
             this.Name = elementName;
         }
 
-        public IEnumerable<IJsonData> Values => this.values;
+        public JsonObject() { }
+
+        public IEnumerable<IJSonData> Values => this.values;
+
+        /// <summary>
+        /// Adds the given object as child and returns reference of this instance.
+        /// </summary>
+        /// <param name="jsonObject">The json object which is part of this instance.</param>
+        /// <returns>Reference of this object, not of the added child!</returns>
+        public JsonObject ContainingObject(JsonObject jsonObject)
+        {
+            this.values.Add(jsonObject);
+            return this;
+        }
 
         public string Name { get; set; }
 
@@ -59,7 +73,7 @@
             return this;
         }
 
-        public JsonObject ContainingObject(string childName, bool wrapObjectInBraces = true)
+        public JsonObject ContainingObject(string childName)
         {
             var jsonObject = new JsonObject(childName);
             this.values.Add(jsonObject);

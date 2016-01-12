@@ -3,14 +3,14 @@
     using System.Collections.Generic;
     using System.Text;
 
-    public class JsonCollection : IJsonData
+    public class JsonCollection : IJSonData
     {
         public string Name { get; }
 
         public JsonCollection(string name)
         {
             this.Name = name;
-            this.Values = new List<JsonValue>();
+            this.Values = new List<IJSonData>();
         }
 
         public string ToJson()
@@ -37,17 +37,31 @@
             return this.ToJson();
         }
 
-        public List<JsonValue> Values { get; set; }
+        public List<IJSonData> Values { get; set; }
 
-        protected virtual string FormatCollectionObject(string elementName, IEnumerable<object> values)
+        private string FormatCollectionObject(string elementName, IEnumerable<object> values)
         {
-            var stringBuilder = new StringBuilder($"\"{elementName}\": [");
+            var stringBuilder = new StringBuilder();
 
+            if (elementName != null)
+            {
+                stringBuilder.Append($"\"{elementName}\": ");
+            }
+
+            stringBuilder.AppendLine("[");
             var listedObjects = JsonBuilder.ListObjects(values);
             stringBuilder.Append(listedObjects);
-            stringBuilder.AppendLine(" ]");
+            stringBuilder.AppendLine("]");
 
             return stringBuilder.ToString();
+        }
+
+        public JsonObject WithObject()
+        {
+            var jsonObject = new JsonObject();
+            this.Values.Add(jsonObject);
+
+            return jsonObject;
         }
     }
 }

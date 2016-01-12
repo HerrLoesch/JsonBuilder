@@ -7,7 +7,7 @@ namespace JSonBuilder
 
     public class JsonBuilder
     {
-        private List<JsonObject> objects = new List<JsonObject>();
+        private List<IJSonData> objects = new List<IJSonData>();
 
         public string Create()
         {
@@ -39,8 +39,12 @@ namespace JSonBuilder
 
         internal static string GetFormatedElementName(string name)
         {
-            var elementName = $"\"{name}\":";
-            return elementName;
+            if (name != null)
+            {
+                return $"\"{name}\":";
+            }
+
+            return "";
         }
 
         internal static string WrapInBraces(string element)
@@ -55,11 +59,15 @@ namespace JSonBuilder
 
         internal static string ListObjects(IEnumerable<object> values)
         {
-            var stringBuilder = new StringBuilder();
+            if (!values.Any())
+            {
+                return "";
+            }
 
+            var stringBuilder = new StringBuilder();
             foreach (var value in values)
             {
-                if (value is IJsonData)
+                if (value is IJSonData)
                 {
                     var wrapedData = value.ToString();
                     stringBuilder.AppendLine(wrapedData + ", ");
@@ -74,6 +82,14 @@ namespace JSonBuilder
             var trimmedResult = formatedObject.Remove(formatedObject.Length - 4, 4);
 
             return trimmedResult;
+        }
+
+        public JsonCollection WithCollection(string elementName)
+        {
+            var jsonCollection = new JsonCollection(elementName);
+            this.objects.Add(jsonCollection);
+
+            return jsonCollection;
         }
     }
 }
