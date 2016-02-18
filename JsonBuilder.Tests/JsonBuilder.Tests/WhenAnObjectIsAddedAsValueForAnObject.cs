@@ -1,8 +1,6 @@
-﻿namespace FluentJsonBuilder.Tests
+﻿namespace JsonBuilder.Tests
 {
     using System.Linq;
-
-    using DynamicSpecs.NUnit;
 
     using NUnit.Framework;
 

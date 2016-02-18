@@ -1,7 +1,5 @@
-﻿namespace FluentJsonBuilder.Tests
+﻿namespace JsonBuilder.Tests
 {
-    using DynamicSpecs.NUnit;
-
     using NUnit.Framework;
 
     public class WhenTheRootContainsAListOfTwoValues : JsonSpecificationBase

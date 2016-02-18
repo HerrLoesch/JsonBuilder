@@ -5,15 +5,15 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C923AC5F-B683-4C38-99F8-C4270132EB68}</ProjectGuid>
+    <ProjectGuid>{E9B07CC8-4C78-44C9-AAD3-0DAACCF1E622}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JSonBuilder</RootNamespace>
-    <AssemblyName>JSonBuilder</AssemblyName>
+    <RootNamespace>JsonBuilder</RootNamespace>
+    <AssemblyName>JsonBuilder</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -40,6 +40,7 @@
     <Compile Include="IJsonData.cs" />
     <Compile Include="JsonBuilder.cs" />
     <Compile Include="JsonCollection.cs" />
+    <Compile Include="JsonEmptyData.cs" />
     <Compile Include="JsonObject.cs" />
     <Compile Include="JsonValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

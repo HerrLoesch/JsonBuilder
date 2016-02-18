@@ -1,16 +1,16 @@
-﻿namespace JSonBuilder
+﻿namespace JsonBuilder
 {
     using System.Collections.Generic;
     using System.Text;
 
-    public class JsonCollection : IJSonData
+    public class JsonCollection : IJsonData
     {
         public string Name { get; }
 
         public JsonCollection(string name)
         {
             this.Name = name;
-            this.Values = new List<IJSonData>();
+            this.Values = new List<IJsonData>();
         }
 
         public string ToJson()
@@ -37,7 +37,7 @@
             return this.ToJson();
         }
 
-        public List<IJSonData> Values { get; set; }
+        public List<IJsonData> Values { get; set; }
 
         private string FormatCollectionObject(string elementName, IEnumerable<object> values)
         {
@@ -62,6 +62,12 @@
             this.Values.Add(jsonObject);
 
             return jsonObject;
+        }
+
+        public JsonCollection WithObject(JsonObject jsonObject)
+        {
+            this.Values.Add(jsonObject);
+            return this;
         }
     }
 }

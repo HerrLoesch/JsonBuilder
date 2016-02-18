@@ -1,4 +1,4 @@
-namespace JSonBuilder
+namespace JsonBuilder
 {
     using System;
     using System.Collections.Generic;
@@ -7,7 +7,7 @@ namespace JSonBuilder
 
     public class JsonBuilder
     {
-        private List<IJSonData> objects = new List<IJSonData>();
+        private List<IJsonData> objects = new List<IJsonData>();
 
         public string Create()
         {
@@ -67,7 +67,7 @@ namespace JSonBuilder
             var stringBuilder = new StringBuilder();
             foreach (var value in values)
             {
-                if (value is IJSonData)
+                if (value is IJsonData)
                 {
                     var wrapedData = value.ToString();
                     stringBuilder.AppendLine(wrapedData + ", ");

@@ -1,4 +1,4 @@
-namespace JSonBuilder.Specs
+namespace JsonBuilder.Tests
 {
     using DynamicSpecs.NUnit;
 

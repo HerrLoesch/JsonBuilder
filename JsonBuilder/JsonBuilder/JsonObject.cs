@@ -1,12 +1,12 @@
-﻿namespace JSonBuilder
+﻿namespace JsonBuilder
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
 
-    public class JsonObject: IJSonData
+    public class JsonObject: IJsonData
     {
-        private readonly List<IJSonData> values = new List<IJSonData>();
+        private readonly List<IJsonData> values = new List<IJsonData>();
 
         public JsonObject(string elementName)
         {
@@ -15,7 +15,7 @@
 
         public JsonObject() { }
 
-        public IEnumerable<IJSonData> Values => this.values;
+        public IEnumerable<IJsonData> Values => this.values;
 
         /// <summary>
         /// Adds the given object as child and returns reference of this instance.
